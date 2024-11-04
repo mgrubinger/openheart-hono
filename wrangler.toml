@@ -1,0 +1,27 @@
+name = "openheart"
+main = "src/index.ts"
+compatibility_date = "2024-10-22"
+compatibility_flags = [ "nodejs_compat" ]
+
+[vars]
+MY_NAME = "grooovy"
+
+[[kv_namespaces]]
+binding = "openheartkv"
+id = "2b0483ce57b8462b8417d12f682caf7c"
+
+# [[r2_buckets]]
+# binding = "MY_BUCKET"
+# bucket_name = "my-bucket"
+
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "my-database"
+# database_id = ""
+
+# [ai]
+# binding = "AI"
+
+# [observability]
+# enabled = true
+# head_sampling_rate = 1
