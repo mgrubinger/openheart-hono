@@ -1,6 +1,6 @@
 import { Hono } from "hono";
 import { html } from "hono/html";
-import { cors } from 'hono/cors'
+import { cors } from "hono/cors";
 
 type Bindings = {
   MY_NAME: string;
@@ -9,7 +9,12 @@ type Bindings = {
 
 const app = new Hono<{ Bindings: Bindings }>();
 
-app.use('/:site', cors())
+app.use(
+  "/*",
+  cors({
+    origin: "*",
+  })
+);
 
 app.get("/", async (context) => {
   return context.html(html`
