@@ -51,7 +51,7 @@ app.get("/list", async (context) => {
   return context.json(compiled);
 });
 
-app.get("/:site", async (context) => {
+app.get("/:site{.+}", async (context) => {
   let { site: sitename } = context.req.param();
 
   const compiled = await getByUrl(sitename, context);
@@ -59,7 +59,7 @@ app.get("/:site", async (context) => {
   return context.json(compiled);
 });
 
-app.post("/:site", async (context) => {
+app.post("/:site{.+}", async (context) => {
   let emoji = await context.req.text();
 
   let parseResult = ensureEmoji(emoji);
